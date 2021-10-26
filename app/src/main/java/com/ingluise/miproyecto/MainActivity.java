@@ -52,6 +52,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i("Información", "La actividad fue destruida");
-        Toast.makeText(this,"Metodo onDestroy", Toast.LENGTH_LONG).show();
     }
 }
