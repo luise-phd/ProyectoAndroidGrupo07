@@ -1,4 +1,4 @@
-package com.ingluise.miproyecto;
+package com.ingluise.ProyectoAndroidGrupo07;
 
 import org.junit.Test;
 

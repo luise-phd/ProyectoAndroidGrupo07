@@ -6,7 +6,7 @@ android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "com.ingluise.miproyecto"
+        applicationId "com.ingluise.ProyectoAndroidGrupo07"
         minSdk 21
         targetSdk 30
         versionCode 1
