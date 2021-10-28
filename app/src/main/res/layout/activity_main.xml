@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="goToActivity2"
-        android:text="Activity 2" />
+        android:text="Activity 2"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -23,6 +25,31 @@ public class MainActivity extends AppCompatActivity {
         newIntent.putExtra("saludo", "bienvenida");
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(newIntent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        int id = menuItem.getItemId();
+
+        if(id == R.id.mnu_actividad2) {
+            Intent newIntent = new Intent(this, SecondActivity.class);
+            newIntent.putExtra("msg", "Hola Activity 2");
+            newIntent.putExtra("saludo", "bienvenida");
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(newIntent);
+        }
+        else if(id == R.id.mnu_actividad3) {
+            Intent newIntent = new Intent(this, ThirdActivity.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(newIntent);
+        }
+
+        return super.onOptionsItemSelected(menuItem);
     }
 
     @Override
