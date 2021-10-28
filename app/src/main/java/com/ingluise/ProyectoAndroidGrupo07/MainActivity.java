@@ -5,21 +5,38 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    TextView t1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this,"Metodo onCreate", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,"Metodo onCreate", Toast.LENGTH_SHORT).show();
+        t1 = (TextView) findViewById(R.id.textView);
+        t1.setText("Hola Mundo!");
+        t1.setTextSize(24);
+        t1.setTextColor(Color.BLUE);
+    }
+
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(hasFocus) {
+            for (int i=76; i < 1000; i++) {
+                t1.setTop(i);
+            }
+            Toast.makeText(this, ""+t1.getTop(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void goToActivity2(View view) {
@@ -58,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_BACK) {
-            new AlertDialog.Builder(this, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+            new AlertDialog.Builder(this, R.style.Theme_AppCompat_Dialog_Alert)
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle("Información")
                     .setMessage("¿Desea salir?")
