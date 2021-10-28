@@ -1,10 +1,13 @@
 package com.ingluise.ProyectoAndroidGrupo07;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,6 +53,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            new AlertDialog.Builder(this, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Información")
+                    .setMessage("¿Desea salir?")
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.this.finish();
+                        }
+                    }).show();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
