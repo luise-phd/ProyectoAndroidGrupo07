@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lista_estado_civil">
+        <item></item>
+        <item>Soltero (a)</item>
+        <item>Unión Libre (a)</item>
+        <item>Casado (a)</item>
+        <item>Divorciado (a)</item>
+        <item>Viudo (a)</item>
+    </string-array>
+</resources>

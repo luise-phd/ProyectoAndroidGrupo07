@@ -2,4 +2,13 @@
     <string name="app_name">Proyecto Grupo 07</string>
     <string name="actividad2">Actividad 2</string>
     <string name="actividad3">Actividad 3</string>
+
+    <string-array name="lista_cargo">
+        <item></item>
+        <item>Servicios generales</item>
+        <item>Vigilante</item>
+        <item>Secretaria</item>
+        <item>Gerente</item>
+        <item>Asesor</item>
+    </string-array>
 </resources>

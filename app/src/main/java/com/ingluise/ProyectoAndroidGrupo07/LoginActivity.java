@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         tv1 = (TextView) findViewById(R.id.textView5);
         tv1.setClickable(true);
         tv1.setLinkTextColor(Color.BLUE);
-//        String texto = "<a href='https://www.google.com/'>Recordar contraseña</a>";
+//        String texto = "<a href='https://www.google.com/'>Google</a>";
         String texto = "<a href=''>Recordar contraseña</a>";
 //        tv1.setMovementMethod(LinkMovementMethod.getInstance());
         tv1.setText(Html.fromHtml(texto));

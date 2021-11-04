@@ -32,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if(hasFocus) {
-            for (int i=76; i < 1000; i++) {
-                t1.setTop(i);
-            }
+//            for (int i=76; i < 1000; i++) {
+//                t1.setTop(i);
+//            }
             Toast.makeText(this, ""+t1.getTop(), Toast.LENGTH_SHORT).show();
         }
     }
 
     public void goToActivity2(View view) {
-        Intent newIntent = new Intent(this, SecondActivity.class);
+        Intent newIntent = new Intent(this, EmpleadoActivity.class);
         newIntent.putExtra("msg", "Hola Activity 2");
         newIntent.putExtra("saludo", "bienvenida");
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        if(id == R.id.mnu_actividad2) {
-            Intent newIntent = new Intent(this, SecondActivity.class);
-            newIntent.putExtra("msg", "Hola Activity 2");
-            newIntent.putExtra("saludo", "bienvenida");
+        if(id == R.id.mnu_empleado) {
+            Intent newIntent = new Intent(this, EmpleadoActivity.class);
+//            newIntent.putExtra("msg", "Hola Activity 2");
+//            newIntent.putExtra("saludo", "bienvenida");
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
         }

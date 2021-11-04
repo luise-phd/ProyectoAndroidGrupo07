@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiProyecto">
         <activity
+            android:name=".ThirdActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
@@ -17,15 +20,15 @@
             android:exported="false"
             android:label="@string/app_name" />
         <activity
-            android:name=".ThirdActivity"
+            android:name=".EmpleadoActivity"
             android:exported="false"
             android:label="@string/actividad3" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".SplashScreen"
             android:exported="false"
             android:label="@string/actividad2" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".FourthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
