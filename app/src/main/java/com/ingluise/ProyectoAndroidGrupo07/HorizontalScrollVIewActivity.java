@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class ThirdActivity extends AppCompatActivity {
+public class HorizontalScrollVIewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+        setContentView(R.layout.activity_horizontal_scroollview);
         //Activar boton volver en la ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

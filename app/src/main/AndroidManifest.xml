@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ingluise.ProyectoAndroidGrupo07">
+    package="com.ingluise.ProyectoAndroidGrupo07" >
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_new_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MiProyecto">
+        android:theme="@style/Theme.MiProyecto" >
         <activity
-            android:name=".ThirdActivity"
+            android:name=".ScrollViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HorizontalScrollVIewActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -22,14 +25,14 @@
         <activity
             android:name=".EmpleadoActivity"
             android:exported="false"
-            android:label="@string/actividad3" />
+            android:label="@string/horizontalscrollview" />
         <activity
             android:name=".SplashScreen"
             android:exported="false"
-            android:label="@string/actividad2" />
+            android:label="@string/empleado" />
         <activity
-            android:name=".FourthActivity"
-            android:exported="true">
+            android:name=".EncuestaActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,4 +8,20 @@
         <item>Divorciado (a)</item>
         <item>Viudo (a)</item>
     </string-array>
+
+    <string-array name="lista_cargo">
+        <item></item>
+        <item>Servicios generales</item>
+        <item>Vigilante</item>
+        <item>Secretaria</item>
+        <item>Gerente</item>
+        <item>Asesor</item>
+    </string-array>
+
+    <string-array name="nivel_ingles">
+        <item>Seleccione...</item>
+        <item>Bueno</item>
+        <item>Regular</item>
+        <item>No tan bueno</item>
+    </string-array>
 </resources>

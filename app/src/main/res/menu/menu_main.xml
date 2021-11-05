@@ -5,9 +5,9 @@
     <item
         android:id="@+id/mnu_empleado"
         android:icon="@mipmap/ic_rodillo_round"
-        android:title="@string/actividad2"
+        android:title="@string/empleado"
         app:showAsAction="always" />
     <item
         android:id="@+id/mnu_actividad3"
-        android:title="@string/actividad3" />
+        android:title="@string/horizontalscrollview" />
 </menu>

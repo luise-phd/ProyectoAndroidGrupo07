@@ -73,7 +73,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recordar contraseña"
+                android:text="@string/recordar_contrasena"
                 android:textAlignment="center"
                 android:textColor="@color/design_default_color_primary"
                 android:textColorLink="@color/design_default_color_primary" />

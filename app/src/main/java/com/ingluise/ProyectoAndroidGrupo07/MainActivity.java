@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(newIntent);
         }
         else if(id == R.id.mnu_actividad3) {
-            Intent newIntent = new Intent(this, ThirdActivity.class);
+            Intent newIntent = new Intent(this, HorizontalScrollVIewActivity.class);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
         }
