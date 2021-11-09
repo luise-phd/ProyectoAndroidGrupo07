@@ -17,12 +17,10 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sunshiney"
             android:text="Encuesta\nCiclo 4"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="#020202"
-            android:textSize="22sp"
+            android:textAppearance="@style/mi_estilo"
             android:textStyle="bold" />
 
         <ImageView
@@ -202,7 +200,7 @@
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Entre 1 a 3" />
+                android:text="Entre 1 y 3" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
