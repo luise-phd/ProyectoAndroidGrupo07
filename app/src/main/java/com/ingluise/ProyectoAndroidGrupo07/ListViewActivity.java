@@ -3,6 +3,7 @@ package com.ingluise.ProyectoAndroidGrupo07;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 public class ListViewActivity extends AppCompatActivity {
     private ListView lv1;
     private ArrayList<String> listado = new ArrayList<String>();
+
+    private static final String TAG = ListViewActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +37,19 @@ public class ListViewActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), pos + "-"+lv1.getItemAtPosition(pos), Toast.LENGTH_SHORT).show();
             }
         });
+
+        if (savedInstanceState != null) {
+            Log.d(TAG, "onCreate() Restoring previous state");
+            /* restore state */
+        } else {
+            Log.d(TAG, "onCreate() No saved state available");
+            /* initialize app */
+        }
+
+        try {
+            double op = 121 / 0;
+        } catch (ArithmeticException ae) {
+            Log.e(TAG, "Error", ae);
+        }
     }
 }

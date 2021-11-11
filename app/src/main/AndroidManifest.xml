@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiProyecto">
         <activity
-            android:name=".LoginActivity"
+            android:name=".EncuestaActivity"
             android:exported="false" />
         <activity
             android:name=".ScrollViewActivity"
@@ -19,7 +19,7 @@
             android:name=".HorizontalScrollVIewActivity"
             android:exported="false" />
         <activity
-            android:name=".EncuestaActivity"
+            android:name=".ListViewActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -34,7 +34,7 @@
             android:exported="false"
             android:label="@string/empleado" />
         <activity
-            android:name=".ListViewActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

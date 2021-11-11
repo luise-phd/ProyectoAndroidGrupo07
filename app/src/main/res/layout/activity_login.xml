@@ -78,6 +78,14 @@
                 android:textColor="@color/design_default_color_primary"
                 android:textColorLink="@color/design_default_color_primary" />
 
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Regístrese"
+                android:textAlignment="center" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
