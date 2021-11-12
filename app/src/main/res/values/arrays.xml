@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lista_estado_civil">
-        <item></item>
+        <item>Seleccione...</item>
         <item>Soltero (a)</item>
-        <item>Unión Libre (a)</item>
+        <item>Unión Libre</item>
         <item>Casado (a)</item>
         <item>Divorciado (a)</item>
         <item>Viudo (a)</item>
     </string-array>
 
     <string-array name="lista_cargo">
-        <item></item>
+        <item>Seleccione...</item>
         <item>Servicios generales</item>
         <item>Vigilante</item>
         <item>Secretaria</item>

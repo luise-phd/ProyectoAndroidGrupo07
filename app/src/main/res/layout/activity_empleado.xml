@@ -16,16 +16,26 @@
         android:visibility="gone" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/input_DNI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextPersonName2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="DNI"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_dir"
         android:ems="10"
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/input_fnac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner_estado_civil"
@@ -37,20 +47,13 @@
         android:id="@+id/input_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/input_DNI"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
         android:ems="10"
         android:hint="Nombres"
         android:inputType="textPersonName" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextEmailAddress"
-        android:onClick="agregarDatos"
-        android:text="Agregar" />
 
     <EditText
         android:id="@+id/input_apellido"
@@ -108,21 +111,78 @@
         android:entries="@array/lista_cargo" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/input_tel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextDate"
+        android:layout_below="@id/input_fnac"
         android:ems="10"
         android:hint="Teléfono"
         android:inputType="phone" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/input_dir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPhone"
+        android:layout_below="@id/input_tel"
         android:ems="10"
         android:hint="Dirección"
         android:inputType="textPersonName" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_email">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:onClick="agregarDatos"
+                android:text="Agregar" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:onClick="listarDatos"
+                android:text="Listar" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="eliminarDatos"
+                android:text="Eliminar" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:onClick="editarDatos"
+                android:text="Editar" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="buscarDatos"
+                android:text="Buscar" />
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>
