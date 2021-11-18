@@ -1,15 +1,19 @@
 package com.ingluise.ProyectoAndroidGrupo07;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -108,7 +112,34 @@ public class CamaraActivity extends AppCompatActivity {
                 Toast.makeText(this, "Por favor, ingrese la descripción", Toast.LENGTH_SHORT).show();
         }
         else if(id == R.id.mnu_buscar) {
-
+            LayoutInflater li = LayoutInflater.from(this);
+            View nuevaVista = li.inflate(R.layout.inputdialog, null);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setView(nuevaVista);
+            final EditText userInput = nuevaVista.findViewById(R.id.input_description);
+            alertDialogBuilder
+                    .setCancelable(false)
+                    .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Bitmap decodedByte = null;
+                            byte[] decodeString;
+                            db = admin.getReadableDatabase();
+                            fila = db.rawQuery("SELECT * FROM imagenes WHERE desc='"+userInput.getText().toString()+"'", null);
+                            String desc = "";
+                            if (fila.moveToFirst()) {
+                                decodeString = Base64.decode(fila.getString(2), Base64.DEFAULT);
+                                decodedByte = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
+                                txtDesc.setText(fila.getString(1));
+                                imgView.setImageBitmap(decodedByte);
+                            } else
+                                Toast.makeText(getApplicationContext(), "La imagen no existe", Toast.LENGTH_SHORT).show();
+                            db.close();
+                        }
+                    })
+                    .setNegativeButton("Cancelar", null);
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         }
 
         return super.onOptionsItemSelected(menuItem);
