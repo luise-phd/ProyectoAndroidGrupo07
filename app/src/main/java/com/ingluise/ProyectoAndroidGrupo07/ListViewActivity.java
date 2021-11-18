@@ -66,11 +66,13 @@ public class ListViewActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long l) {
                 String[] reg = lv1.getItemAtPosition(pos).toString().split("-");
                 String[] emp = reg[1].split("\n");
+                //Toast.makeText(getApplicationContext(), emp[0], Toast.LENGTH_SHORT).show();
                 db = admin.getWritableDatabase();
                 String[] args = new String[]{emp[0]};
                 db.delete("empleado", "ndoc=?", args);
                 Toast.makeText(getApplicationContext(), "Registro eliminado", Toast.LENGTH_SHORT).show();
-//                Toast.makeText(getApplicationContext(), emp[0], Toast.LENGTH_SHORT).show();
+                adapter.remove(lv1.getItemAtPosition(pos).toString());
+                adapter.notifyDataSetChanged();
                 return false;
             }
         });
