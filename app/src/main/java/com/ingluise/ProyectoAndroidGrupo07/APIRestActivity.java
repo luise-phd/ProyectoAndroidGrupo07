@@ -46,7 +46,12 @@ public class APIRestActivity extends AppCompatActivity {
                     myConnection.setRequestProperty("Contact-Me", "usuario@gmail.com");
                     if (myConnection.getResponseCode() == 200) {
                         Log.e(TAG, "Conexión exitosa");
-                        tv1.setText("Conexión exitosa");
+                        APIRestActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                tv1.setText("Conexión exitosa");
+                            }
+                        });
                         InputStream responseBody = myConnection.getInputStream();
                         InputStreamReader responseBodyReader = new InputStreamReader(responseBody, "UTF-8");
                         JsonReader jsonReader = new JsonReader(responseBodyReader);
@@ -55,7 +60,12 @@ public class APIRestActivity extends AppCompatActivity {
                             String key = jsonReader.nextName();
                             if (key.equals(et2.getText().toString())) {
                                 String value = jsonReader.nextString();
-                                tv1.setText(value);
+                                APIRestActivity.this.runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        tv1.setText(value);
+                                    }
+                                });
                                 break;
                             } else {
                                 jsonReader.skipValue();
@@ -65,14 +75,33 @@ public class APIRestActivity extends AppCompatActivity {
                         myConnection.disconnect();
                     } else {
                         Log.e(TAG, "No se pudo realizar la conexión: "+myConnection.getResponseCode());
-                        tv1.setText("No se pudo realizar la conexión: "+myConnection.getResponseCode());
+                        APIRestActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    tv1.setText("No se pudo realizar la conexión: "+myConnection.getResponseCode());
+                                } catch (IOException e) {
+                                    tv1.setText("IOException: " + e.getMessage().toString());
+                                }
+                            }
+                        });
                     }
                 } catch (MalformedURLException e) {
                     Log.e(TAG, "MalformedURLException: " + e.getMessage());
-                    tv1.setText("MalformedURLException: " + e.getMessage().toString());
+                    APIRestActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv1.setText("MalformedURLException: " + e.getMessage().toString());
+                        }
+                    });
                 } catch (IOException e) {
                     Log.e(TAG, "IOException: " + e.getMessage());
-                    tv1.setText("IOException: " + e.getMessage().toString());
+                    APIRestActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv1.setText("IOException: " + e.getMessage().toString());
+                        }
+                    });
                 }
             }
         });

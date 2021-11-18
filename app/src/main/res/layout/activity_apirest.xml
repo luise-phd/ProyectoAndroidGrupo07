@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Clave"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="label_search_url" />
 
     <TextView
         android:id="@+id/textView15"
