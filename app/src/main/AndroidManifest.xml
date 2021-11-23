@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiProyecto">
         <activity
-            android:name=".HorasExtrasFirebaseActivity"
+            android:name=".CargoFirebaseActivity"
             android:exported="false" />
         <activity
             android:name=".NominaActivity"
             android:exported="false" />
         <activity
-            android:name=".CamaraActivity"
+            android:name=".HorasExtrasFirebaseActivity"
             android:exported="false" />
         <activity
             android:name=".APIRestActivity"
@@ -51,7 +51,7 @@
             android:exported="false"
             android:label="@string/empleado" />
         <activity
-            android:name=".CargoFirebaseActivity"
+            android:name=".ImagenesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

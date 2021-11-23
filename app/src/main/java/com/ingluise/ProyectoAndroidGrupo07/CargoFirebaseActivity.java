@@ -85,7 +85,7 @@ public class CargoFirebaseActivity extends AppCompatActivity {
 
         }
         else if(id == R.id.mnu_limpiar) {
-
+            et1.setText("");
         }
 
         return super.onOptionsItemSelected(menuItem);

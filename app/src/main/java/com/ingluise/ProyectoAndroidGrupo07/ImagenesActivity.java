@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -22,9 +23,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
-public class CamaraActivity extends AppCompatActivity {
+public class ImagenesActivity extends AppCompatActivity {
     private MyDBSQLiteHelper admin;
     private SQLiteDatabase db;
     private ContentValues cv;
@@ -39,7 +43,7 @@ public class CamaraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camara);
+        setContentView(R.layout.activity_imagenes);
 
         admin = new MyDBSQLiteHelper(this, vars.bd, null, vars.ver);
 
@@ -62,12 +66,32 @@ public class CamaraActivity extends AppCompatActivity {
         }
     }
 
+    public void abrirGaleria(View view) {
+        Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(intent, 2);
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // De la camara
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imgBitmap = (Bitmap) extras.get("data");
             imgView.setImageBitmap(imgBitmap);
+        }
+        // De la Galería
+        if (requestCode == 2 && resultCode == RESULT_OK) {
+            Uri selectedImage = data.getData();
+            InputStream inputStream;
+            try {
+                inputStream = getContentResolver().openInputStream(selectedImage);
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                Bitmap bitmap = BitmapFactory.decodeStream(bufferedInputStream);
+                imgView.setImageBitmap(bitmap);
+                Toast.makeText(this, "ok"+data.getData(), Toast.LENGTH_SHORT).show();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 
