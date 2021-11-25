@@ -88,7 +88,7 @@ public class ImagenesActivity extends AppCompatActivity {
                 BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
                 Bitmap bitmap = BitmapFactory.decodeStream(bufferedInputStream);
                 imgView.setImageBitmap(bitmap);
-                Toast.makeText(this, "ok"+data.getData(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, ""+data.getData(), Toast.LENGTH_LONG).show();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

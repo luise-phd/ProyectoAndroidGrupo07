@@ -4,4 +4,7 @@
     <string name="horizontalscrollview">HorizontalScrollView</string>
     <string name="empleado">Empleado</string>
     <string name="agregar">Agregar</string>
+    <string name="latitude_label">Latitud</string>
+    <string name="longitude_label">Longitud</string>
+    <string name="activity_label">Actividad</string>
 </resources>
