@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiProyecto">
         <activity
+            android:name=".LocationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ImagenesActivity"
             android:exported="false" />
         <activity
@@ -55,7 +58,7 @@
             android:exported="false"
             android:label="@string/empleado" />
         <activity
-            android:name=".LocationActivity"
+            android:name=".RecyclerViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
