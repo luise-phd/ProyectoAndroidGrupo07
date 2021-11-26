@@ -30,6 +30,9 @@ public class CargoFirebaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cargo_firebase);
 
+        //Activar boton volver en la ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         et1 = findViewById(R.id.input_cargo);
     }
 
@@ -39,10 +42,19 @@ public class CargoFirebaseActivity extends AppCompatActivity {
         return true;
     }
 
+    //Finalizar la actividad
+    public void onBackPressed() {
+        finish();
+    }
+
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        if(id == R.id.mnu_agregar) {
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        else if(id == R.id.mnu_agregar) {
             String cargo = et1.getText().toString();
             if (!cargo.equals("")) {
                 database = FirebaseDatabase.getInstance();

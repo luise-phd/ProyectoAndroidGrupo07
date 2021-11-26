@@ -45,6 +45,9 @@ public class ImagenesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imagenes);
 
+        //Activar boton volver en la ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         admin = new MyDBSQLiteHelper(this, vars.bd, null, vars.ver);
 
         btnCamara = findViewById(R.id.btnCamara);
@@ -101,10 +104,19 @@ public class ImagenesActivity extends AppCompatActivity {
         return true;
     }
 
+    //Finalizar la actividad
+    public void onBackPressed() {
+        finish();
+    }
+
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        if(id == R.id.mnu_guardar) {
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        else if(id == R.id.mnu_guardar) {
             String desc = txtDesc.getText().toString();
             if (!desc.equals("")) {
                 if (imgView.getDrawable() != null) {

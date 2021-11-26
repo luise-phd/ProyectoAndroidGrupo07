@@ -33,6 +33,9 @@ public class HorasExtrasFirebaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horas_extras_firebase);
 
+        //Activar boton volver en la ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         et1 = findViewById(R.id.input_cod_he);
         et2 = findViewById(R.id.input_empleado);
         et3 = findViewById(R.id.input_cantidad_he);
@@ -49,10 +52,19 @@ public class HorasExtrasFirebaseActivity extends AppCompatActivity {
         return true;
     }
 
+    //Finalizar la actividad
+    public void onBackPressed() {
+        finish();
+    }
+
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        if(id == R.id.mnu_agregar) {
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        else if(id == R.id.mnu_agregar) {
             String cod = et1.getText().toString();
             String mes = sp1.getSelectedItem().toString();
             String emp = et2.getText().toString();

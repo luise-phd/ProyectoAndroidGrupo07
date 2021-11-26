@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +29,9 @@ public class APIRestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apirest);
+
+        //Activar boton volver en la ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         et1 = findViewById(R.id.input_URL);
         et2 = findViewById(R.id.input_clave);
@@ -105,5 +109,21 @@ public class APIRestActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //Finalizar la actividad
+    public void onBackPressed() {
+        finish();
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        int id = menuItem.getItemId();
+
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(menuItem);
     }
 }

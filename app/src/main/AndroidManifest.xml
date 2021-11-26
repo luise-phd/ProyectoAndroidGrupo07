@@ -14,51 +14,60 @@
         android:theme="@style/Theme.MiProyecto">
         <activity
             android:name=".LocationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/location" />
         <activity
             android:name=".ImagenesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/imagenes" />
         <activity
             android:name=".CargoFirebaseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/cargo" />
         <activity
             android:name=".NominaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/nomina" />
         <activity
             android:name=".HorasExtrasFirebaseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/hextras" />
         <activity
             android:name=".APIRestActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/api_rest" />
         <activity
             android:name=".EmpleadoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/empleado" />
         <activity
             android:name=".EncuestaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/encuesta" />
         <activity
             android:name=".ScrollViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/scrollview" />
         <activity
             android:name=".HorizontalScrollVIewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/horizontalscrollview" />
         <activity
             android:name=".ListViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="false"
+            android:label="@string/recyclerview" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:label="@string/horizontalscrollview" />
-        <activity
             android:name=".SplashScreen"
-            android:exported="false"
-            android:label="@string/empleado" />
-        <activity
-            android:name=".RecyclerViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

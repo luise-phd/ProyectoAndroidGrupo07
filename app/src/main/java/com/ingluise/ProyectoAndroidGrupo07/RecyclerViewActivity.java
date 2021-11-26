@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 public class RecyclerViewActivity extends AppCompatActivity {
     private final int tam = 1000000;
@@ -22,6 +23,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
+
+        //Activar boton volver en la ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         rv = findViewById(R.id.rv_list);
         dataset = initDataset();
@@ -47,5 +51,21 @@ public class RecyclerViewActivity extends AppCompatActivity {
 //        rv.setLayoutManager(llm);
         rv.setLayoutManager(glm);
         rv.scrollToPosition(scrollPosition);
+    }
+
+    //Finalizar la actividad
+    public void onBackPressed() {
+        finish();
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        int id = menuItem.getItemId();
+
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(menuItem);
     }
 }

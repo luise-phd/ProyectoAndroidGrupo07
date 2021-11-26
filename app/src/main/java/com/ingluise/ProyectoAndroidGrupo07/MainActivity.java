@@ -16,7 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    TextView t1;
+    private Intent newIntent;
+    private TextView t1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //            for (int i=76; i < 1000; i++) {
 //                t1.setTop(i);
 //            }
-            Toast.makeText(this, ""+t1.getTop(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, ""+t1.getTop(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -56,17 +57,65 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        if(id == R.id.mnu_empleado) {
-            Intent newIntent = new Intent(this, EmpleadoActivity.class);
-//            newIntent.putExtra("msg", "Hola Activity 2");
-//            newIntent.putExtra("saludo", "bienvenida");
-            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(newIntent);
-        }
-        else if(id == R.id.mnu_actividad3) {
-            Intent newIntent = new Intent(this, HorizontalScrollVIewActivity.class);
-            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(newIntent);
+        switch (id) {
+            case R.id.mnu_empleado:
+                newIntent = new Intent(this, EmpleadoActivity.class);
+    //            newIntent.putExtra("msg", "Hola Activity 2");
+    //            newIntent.putExtra("saludo", "bienvenida");
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_imagenes:
+                newIntent = new Intent(this, ImagenesActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_hor_scrollview:
+                newIntent = new Intent(this, HorizontalScrollVIewActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_ver_scrollview:
+                newIntent = new Intent(this, ScrollViewActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_Cargo:
+                newIntent = new Intent(this, CargoFirebaseActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_api_rest:
+                newIntent = new Intent(this, APIRestActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_encuesta:
+                newIntent = new Intent(this, EncuestaActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_recyclerview:
+                newIntent = new Intent(this, RecyclerViewActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_hextras:
+                newIntent = new Intent(this, HorasExtrasFirebaseActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_location:
+                newIntent = new Intent(this, LocationActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+            case R.id.mnu_nomina:
+                newIntent = new Intent(this, NominaActivity.class);
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(newIntent);
+                break;
+
         }
 
         return super.onOptionsItemSelected(menuItem);

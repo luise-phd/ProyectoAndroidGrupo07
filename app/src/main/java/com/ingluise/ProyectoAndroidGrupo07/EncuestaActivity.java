@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,6 +33,10 @@ public class EncuestaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encuesta);
+
+        //Activar boton volver en la ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         b1 = (Button) findViewById(R.id.button4);
         sb1 = findViewById(R.id.seekBar);
         tv1 = findViewById(R.id.textView13);
@@ -102,5 +107,21 @@ public class EncuestaActivity extends AppCompatActivity {
                     "\n" + niv_ing + "\n" + lengs + "\n" + tiempo + "\n" + gus_prog +
                     "\n" + niv_sat + "\n" + obs)
             .setPositiveButton("Aceptar", null).show();
+    }
+
+    //Finalizar la actividad
+    public void onBackPressed() {
+        finish();
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        int id = menuItem.getItemId();
+
+        if(id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(menuItem);
     }
 }

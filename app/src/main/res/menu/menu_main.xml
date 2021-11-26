@@ -4,10 +4,43 @@
 
     <item
         android:id="@+id/mnu_empleado"
-        android:icon="@mipmap/ic_rodillo_round"
+        android:icon="@drawable/ic_empleado"
         android:title="@string/empleado"
         app:showAsAction="always" />
     <item
-        android:id="@+id/mnu_actividad3"
-        android:title="@string/horizontalscrollview" />
+        android:id="@+id/mnu_imagenes"
+        android:icon="@drawable/ic_imagenes"
+        android:title="@string/horizontalscrollview"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mnu_location"
+        android:icon="@drawable/ic_location"
+        android:title="Ubicación"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mnu_encuesta"
+        android:icon="@drawable/encuesta"
+        android:title="Encuesta"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mnu_Cargo"
+        android:title="Cargo" />
+    <item
+        android:id="@+id/mnu_hextras"
+        android:title="Horas extras" />
+    <item
+        android:id="@+id/mnu_nomina"
+        android:title="Nomina" />
+    <item
+        android:id="@+id/mnu_api_rest"
+        android:title="API Rest" />
+    <item
+        android:id="@+id/mnu_hor_scrollview"
+        android:title="Horizontal ScrollView" />
+    <item
+        android:id="@+id/mnu_ver_scrollview"
+        android:title="ScrollView" />
+    <item
+        android:id="@+id/mnu_recyclerview"
+        android:title="RecyclerView" />
 </menu>

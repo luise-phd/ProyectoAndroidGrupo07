@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">Proyecto Grupo 07</string>
+    <string name="app_name">P/Grupo 07</string>
     <string name="recordar_contrasena">Recordar contraseña</string>
-    <string name="horizontalscrollview">HorizontalScrollView</string>
+    <string name="horizontalscrollview">Horizontal ScrollView</string>
+    <string name="scrollview">ScrollView</string>
+    <string name="imagenes">Imágenes</string>
+    <string name="location">Ubicación</string>
+    <string name="encuesta">Encuesta</string>
+    <string name="cargo">Cargo</string>
+    <string name="hextras">Horas Extras</string>
+    <string name="nomina">Nomina</string>
+    <string name="api_rest">API Rest</string>
+    <string name="recyclerview">RecyclerView</string>
     <string name="empleado">Empleado</string>
     <string name="agregar">Agregar</string>
     <string name="latitude_label">Latitud</string>
